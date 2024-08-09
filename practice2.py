@@ -218,3 +218,59 @@ print(menu, type(menu))
 menu = set(menu)
 print(menu, type(menu))
 '''
+# Quiz) 당신의 학교에서는 파이썬 코딩 대회를 주최합니다.
+# 참석률을 높이기 위해 댓글 이벤트를 진행하기로 하였습니다.
+# 댓글 작성자들 중에 추첨을 통해 1명은 치킨, 3명은 커피 쿠폰을 받게 됩니다.
+# 추첨 프로그램을 작성하시오.
+
+# 조건 1 : 편의상 댓글은 20명이 작성하였고 아이디는 1 ~ 20 이라고 가정
+# 조건 2 : 댓글 내용과 상관 없이 무작위로 추첨하되 중복 불가
+# 조건 3 :  random 모듈의 suffle 과 simple 을 활용
+
+# 출력 예제
+# -- 당첨자 발표 --
+# 치킨 당첨자 : 1
+# 커피 당첨자 : [2, 3, 4]
+# -- 축하합니다 --
+
+# (활용 예제)
+from random import * 
+lst = range(1, 21) # 1 ~ 20까지의 숫자를 생성 
+lst = list(lst)
+
+# 리스트의 값을 섞음
+shuffle(lst)
+
+# 댓글 이벤트 중 치킨을 받을사람을 선정 
+# 이후 커피 당첨자에 중복 되지 않도록 list에서 제거 
+# target_chicken = sample(lst,1)[0]
+# lst.remove(target_chicken)
+
+# # 리스트에서 제거되었는지 확인하는 작업 
+# # list 출력
+# checking_list = sorted(lst)
+# print(checking_list)
+
+# # 치킨 당첨자를 제거한 리스트를 기반으로 커피 당첨자 선정 
+# target_coffee = sample(lst,3)
+
+# # UI제공 - 알아볼수있도록 print문 출력 
+# print("-- 당첨자 발표 --")
+# print(f"치킨 당첨자 : {target_chicken}")
+# print(f"커피 당첨자 : {target_coffee}")
+# print("-- 축하합니다 --")
+
+# (활용 예제)
+from random import * 
+users = range(1, 21) # 1 ~ 20까지의 숫자를 생성 
+users = list(users)
+
+# 리스트의 값을 섞음
+shuffle(users)
+
+winners = sample(users, 4) # 4명 중에서 1명은 치킨, 3명은 커피
+
+print(" -- 당첨자 발표 -- ")
+print("치킨 당첨자 : {0}".format(winners[0]))
+print("커피 당첨자 : {0}".format(winners[1:]))
+print(" -- 축하합니다 -- ")
