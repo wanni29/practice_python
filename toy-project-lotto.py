@@ -1,10 +1,19 @@
 from random import *
+from colorama import  *
 import time
+
+#colorama 초기화 
+init(autoreset = True)
 
 def typewriter_effect(text, delay=0.05):
     for char in text:
             print(char, end='', flush=True)
             time.sleep(delay)
+    print() # 줄바꿈
+
+def blue_typewriter_effect(text, delay=0.05):
+    print(Fore.BLUE + text, end='', flush=True)
+    time.sleep(delay)
     print() # 줄바꿈
 
 
@@ -35,9 +44,9 @@ sorted_lists = sorted(number_dict.values(), key=lambda x: x[0], reverse = False)
 
 
 # 결과 확인 
-typewriter_effect(starting)
+blue_typewriter_effect(starting)
 for i, lst in enumerate(sorted_lists):
     message_number = f"{lst[0]}\t{lst[1]}\t{lst[2]}\t{lst[3]}\t{lst[4]}\t{lst[5]}"
     typewriter_effect(message_number)
 ending = "--------------------------------------------"
-typewriter_effect(ending)
+blue_typewriter_effect(ending)
