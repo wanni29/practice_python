@@ -1,5 +1,16 @@
 # if문
 
+# 접두사와 접미사
+sentence = "powerdog"
+is_prefix = "pow"
+is_suffix = "dog"
+
+result_prefix = sentence.startswith(is_prefix)
+print(result_prefix)
+
+result_suffix = sentence.endswith(is_suffix)
+print(result_suffix)
+
 # 1. 기초 1번
 '''
 weather = input("오늘 날씨는 어때요? ")
